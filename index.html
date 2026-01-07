@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wealth Growth Predictor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="background-overlay">
+        
+        <h1>Wealth Growth</h1>
+
+        <div class="container">
+            <div class="input-group">
+                <h3>
+                    Initial Investment:
+                    <input type="number" min="0" id="initialDeposit" placeholder="1000"> 
+                </h3>
+                <h3>
+                    Currency:
+                    <select id="currency">
+                        <option value="€">EUR (€)</option>
+                        <option value="$">USD ($)</option>
+                        <option value="RSD">RSD (DIN)</option>
+                        <option value="£">GBP (£)</option>
+                        <option value="₣">CHF (₣)</option>
+                    </select>
+                </h3>
+            </div>
+
+            <div class="input-group">
+                <h3>
+                    Monthly Contribution:
+                    <input type="number" min="0" id="monthlyAdd" placeholder="50"> 
+                </h3>
+            </div>
+
+            <div class="input-group">
+                <h3>
+                    Estimated Annual Interest:
+                    <input type="number" step="0.1" min="0" id="interestRate" placeholder="0">
+                </h3>
+            </div>
+
+            <div class="input-group">
+                <h3>
+                    Investment Period (Years):
+                    <input type="number" min="1" id="years" placeholder="0">
+                </h3>
+            </div>
+
+            <div class="button-group">
+                <button class="main-btn" onclick="calculateSavings()">Analyze Growth</button>
+                <button class="reset-btn" onclick="resetFields()">Clear All</button>
+            </div>
+
+            <div class="new-value" id="result"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
