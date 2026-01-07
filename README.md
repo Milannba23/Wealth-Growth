@@ -1,19 +1,38 @@
-# Wealth Growth Calculator
+# Wealth Growth Predictor (Compound Interest) 💰
 
-Wealth Growth is a financial tool designed to help users project the future value of their investments. Using compound interest calculations, the app provides a clear visualization of how savings grow over time.
+The **Wealth Growth Predictor** is a high-performance web tool designed to help users visualize the power of compound interest and long-term savings. It features a modern, user-friendly interface that simplifies complex financial calculations.
 
-## 🚀 Features
-- **Dynamic Projections**: Calculate total growth based on initial investment and annual interest.
-- **Glassmorphism UI**: A modern, sleek design with a blurred background for a professional look.
-- **Responsive Layout**: Works on both desktop and mobile browsers.
-- **Currency Support**: Choose from various global currencies (EUR, USD, RSD, etc.).
 
-## 🛠️ Built With
-- **HTML5**: Semantic structure.
-- **CSS3**: Custom styling with backdrop filters.
-- **JavaScript**: Core logic for financial formulas.
+## 🚀 Live Demo
+**Test the application here:** [**https://milannba23.github.io/Wealth-Growth/**](https://milannba23.github.io/Wealth-Growth/)
 
-## 🖥️ Setup
-To run this project locally:
-1. Clone the repository.
-2. Open `index.html` in your browser.
+
+## ✨ Features
+
+* **Compound Interest Visualization**: See exactly how much your savings will grow over time with compounding.
+* **Monthly Contribution Logic**: Calculates final wealth including initial deposits and recurring monthly savings.
+* **Inflation-Adjusted Thinking**: Helps users plan their financial future by understanding growth rates.
+* **Clean UI/UX**: Built with a focus on simplicity and mobile responsiveness.
+* **Instant Reset**: Clear all inputs with a single click to perform new simulations.
+
+## 🧪 QA Engineering Insights
+To ensure financial accuracy, the following testing methods were applied:
+- **Mathematical Verification**: Calculations cross-checked against standard financial formulas.
+- **Data Integrity**: Verified that the app handles large numbers (millions) and decimals correctly without rounding errors.
+- **Edge Case Testing**: Tested with 0% interest rates and 0 monthly contributions to ensure no crashes or logic loops.
+
+## 🛠️ Technical Stack
+
+* **HTML5**: Structured input fields for financial data.
+* **CSS3**: Modern styling with focus on clarity and responsive design.
+* **JavaScript (ES6+)**: Core calculation engine using the compound interest formula.
+
+## 🧮 Calculation Logic
+
+The application uses the following financial formula:
+
+$$A = P(1 + r)^n + PMT \times \frac{(1 + r)^n - 1}{r}$$
+
+*Where: A = Final Amount, P = Principal, r = Interest Rate, n = Number of periods, PMT = Monthly Payment.*
+
+*Developed as part of a professional QA & Development portfolio.*
