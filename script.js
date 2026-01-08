@@ -17,7 +17,7 @@ function calculateSavings() {
     let totalMonths = years * 12;
     let balance = deposit;
 
-    // 4. Calculation Loop
+    // 4. The Loop - Calculating Compound Interest
     for (let i = 1; i <= totalMonths; i++) {
         balance += monthlyAdd; 
         balance += balance * monthlyInterest; 
@@ -27,7 +27,7 @@ function calculateSavings() {
     let totalInvested = deposit + (monthlyAdd * totalMonths);
     let profit = balance - totalInvested;
 
-    // 6. Display the result with 2 decimal places and formatted numbers
+    // 6. Display the result with the preferred styling from the screenshot
     // Using 'de-DE' for professional dot separator (e.g., 10.540,25)
     let options = { minimumFractionDigits: 2, maximumFractionDigits: 2 };
     
@@ -35,11 +35,14 @@ function calculateSavings() {
     let formattedInvested = totalInvested.toLocaleString('de-DE', options);
     let formattedProfit = profit.toLocaleString('de-DE', options);
 
+    // This structure matches your CSS for the clean look you wanted
     document.getElementById('result').innerHTML =
-        `<div class="result-item">Future Wealth: <strong>${formattedBalance} ${currency}</strong></div>
-         <div class="result-details">
+        `<div class="result-item" style="font-size: 1.2rem; margin-bottom: 8px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 5px;">
+            Future Wealth: <strong>${formattedBalance} ${currency}</strong>
+         </div>
+         <div class="result-details" style="font-size: 0.95rem; line-height: 1.6; color: rgba(255, 255, 255, 0.8);">
             Total Invested: ${formattedInvested} ${currency} <br>
-            Total Profit: <span class="profit-text">${formattedProfit} ${currency}</span>
+            Total Profit: <span class="profit-text" style="color: #28a745; font-weight: bold;">${formattedProfit} ${currency}</span>
          </div>`;
 }
 
