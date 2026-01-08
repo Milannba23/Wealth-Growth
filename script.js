@@ -17,7 +17,7 @@ function calculateSavings() {
     let totalMonths = years * 12;
     let balance = deposit;
 
-    // 4. The Loop
+    // 4. Calculation Loop
     for (let i = 1; i <= totalMonths; i++) {
         balance += monthlyAdd; 
         balance += balance * monthlyInterest; 
@@ -28,7 +28,7 @@ function calculateSavings() {
     let profit = balance - totalInvested;
 
     // 6. Display the result with 2 decimal places and formatted numbers
-    // Using 'de-DE' to get that professional dot separator (e.g., 10.540,25)
+    // Using 'de-DE' for professional dot separator (e.g., 10.540,25)
     let options = { minimumFractionDigits: 2, maximumFractionDigits: 2 };
     
     let formattedBalance = balance.toLocaleString('de-DE', options);
@@ -36,6 +36,26 @@ function calculateSavings() {
     let formattedProfit = profit.toLocaleString('de-DE', options);
 
     document.getElementById('result').innerHTML =
-        `After <b>${years}</b> years, your wealth will grow to <b>${formattedBalance} ${currency}</b>.<br>` +
-        `Total invested: ${formattedInvested} ${currency} | Profit: <b>${formattedProfit} ${currency}</b>`;
+        `<div class="result-item">Future Wealth: <strong>${formattedBalance} ${currency}</strong></div>
+         <div class="result-details">
+            Total Invested: ${formattedInvested} ${currency} <br>
+            Total Profit: <span class="profit-text">${formattedProfit} ${currency}</span>
+         </div>`;
+}
+
+/**
+ * Resets all input fields and clears the result display
+ */
+function resetFields() {
+    // 1. Clear all numeric input values
+    document.getElementById('initialDeposit').value = '';
+    document.getElementById('monthlyAdd').value = '';
+    document.getElementById('interestRate').value = '';
+    document.getElementById('years').value = '';
+    
+    // 2. Reset currency selection to the first option (EUR)
+    document.getElementById('currency').selectedIndex = 0;
+    
+    // 3. Remove the displayed result from the UI
+    document.getElementById('result').innerHTML = '';
 }
